@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31 mars 2020, 02:23:12
+    Author     : ASUS
+*/
+
+
+.custom-text-field
+{
+    -fx-background-color: transparent, white, transparent, white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-padding: 0.166667em;
+}
+ 
+.custom-text-field:hover
+{
+    -fx-background-color: transparent, #909090, transparent, white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-padding: 0.166667em;
+}
+ 
+.custom-text-field:focused
+{
+    -fx-background-color: transparent, #009EF, transparent, white;
+    -fx-background-radius: 0, 0, 0, 0;
+    -fx-padding: 0.166667em;
+}
