@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="no" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReponseReclamationController">
+   <children>
+      <TableView fx:id="tabRep" layoutX="31.0" layoutY="176.0" prefHeight="200.0" prefWidth="1018.0">
+        <columns>
+          <TableColumn fx:id="nomRc" prefWidth="100.79999351501465" text="Nom" />
+          <TableColumn fx:id="prenomRc" minWidth="0.0" prefWidth="61.600006103515625" text="Prenom" />
+            <TableColumn fx:id="TelRc" minWidth="5.600006103515625" prefWidth="84.80001831054688" text="Telephone" />
+            <TableColumn fx:id="emailRc" prefWidth="65.5999755859375" text="Email" />
+            <TableColumn fx:id="typeRc" prefWidth="58.4000244140625" text="Type" />
+            <TableColumn fx:id="objetRc" prefWidth="77.60003662109375" text="Objet" />
+            <TableColumn fx:id="screenshotRc" prefWidth="98.4000244140625" text="ScreenShot" />
+            <TableColumn fx:id="RecRc" prefWidth="106.39996337890625" text="Réclamation" />
+            <TableColumn fx:id="EtatRc" prefWidth="81.60003662109375" text="Etat" />
+            <TableColumn fx:id="idreponseRc" prefWidth="92.00006103515625" text="Id_Reponse" />
+            <TableColumn fx:id="DateD" prefWidth="188.0" text="Date De Disponibilité" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
