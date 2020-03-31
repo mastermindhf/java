@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchorpane_parent" fx:id="anchorpane_parent" prefHeight="449.0" prefWidth="690.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TypeController">
+    <stylesheets>
+        <URL value="@type.css" />
+    </stylesheets>
+   <children>
+      <Pane id="pane_top" fx:id="pane_top" prefHeight="46.0" prefWidth="690.0">
+         <children>
+            <Label id="label_title" layoutX="23.0" layoutY="1.0" prefHeight="31.0" prefWidth="253.0" text="Type ">
+               <font>
+                  <Font name="System Italic" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane id="anchorpane_center" fx:id="anchorpane_center" layoutX="8.0" layoutY="57.0" prefHeight="378.0" prefWidth="660.0">
+         <children>
+            <AnchorPane id="anchorpane_left" fx:id="anchorpane_left" layoutX="14.0" layoutY="11.0" prefHeight="356.0" prefWidth="216.0">
+               <children>
+                  <JFXTextField id="txt_libelle" fx:id="txt_libelle" labelFloat="true" layoutX="15.0" layoutY="37.0" prefHeight="29.0" prefWidth="187.0" promptText="Libelle" />
+                  <JFXButton id="btn_ajouter" fx:id="btn_ajouter" buttonType="RAISED" layoutX="139.0" layoutY="113.0" onAction="#AjouterType" text="Ajouter" />
+                  <JFXButton id="btn_refres" fx:id="btn_refresh" layoutX="69.0" layoutY="113.0" text="Refresh" />
+               </children></AnchorPane>
+            <AnchorPane id="anchorpane_right" fx:id="anchorpane_right" layoutX="238.0" layoutY="11.0" prefHeight="356.0" prefWidth="411.0">
+               <children>
+                  <TableView fx:id="tabview" layoutX="17.0" layoutY="42.0" prefHeight="200.0" prefWidth="377.0">
+                    <columns>
+                      <TableColumn id="column_id" fx:id="column_id" minWidth="1.0" prefWidth="246.0" text="ID" />
+                      <TableColumn fx:id="column_libelle" onEditCommit="#ModifierType" prefWidth="130.0" text="Libelle" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
