@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pi_1.platController">
+   <children>
+      <AnchorPane layoutX="17.0" layoutY="12.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="ajouter" layoutX="115.0" layoutY="312.0" mnemonicParsing="false" onAction="#amal" text="Ajouter" />
+            <TextField fx:id="libelle_plat" layoutX="77.0" layoutY="79.0" />
+            <TextField fx:id="calories_plat" layoutX="77.0" layoutY="126.0" />
+            <TextArea fx:id="description_plat" layoutX="77.0" layoutY="165.0" prefHeight="133.0" prefWidth="149.0" />
+            <Label layoutX="16.0" layoutY="83.0" text="libelle" />
+            <Label layoutX="12.0" layoutY="130.0" text="calories" />
+            <Label fx:id="label" layoutX="190.0" layoutY="-32.0" prefHeight="123.0" prefWidth="261.0" text="Plats">
+               <font>
+                  <Font size="43.0" />
+               </font></Label>
+            <TableView fx:id="table_afficher_plat" layoutX="264.0" layoutY="67.0" prefHeight="250.0" prefWidth="312.0">
+              <columns>
+                <TableColumn fx:id="libelle_plat_column" prefWidth="75.0" text="Libelle" />
+                  <TableColumn fx:id="desc_plat_column" prefWidth="161.0" text="Description" />
+                <TableColumn fx:id="calories_plat_column" prefWidth="75.0" text="Calories" />
+              </columns>
+            </TableView>
+            <Button fx:id="load" layoutX="394.0" layoutY="325.0" mnemonicParsing="false" onAction="#load" text="load " />
+            <Label layoutX="12.0" layoutY="175.0" text="Description" />
+            <TextField fx:id="recherche_plat_field" layoutX="288.0" layoutY="17.0" />
+            <Button fx:id="recherche_plat_button" layoutX="451.0" layoutY="17.0" mnemonicParsing="false" onAction="#rechercherPlat" text="Button" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
