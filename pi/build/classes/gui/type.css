@@ -41,9 +41,7 @@
     -fx-background-color: red, linear-gradient(to bottom,derive(red,10%)10%,derive(white,5%)5%);
 }
 
-#err_nom,#err_des,#err_auteur,#err_qte,#err_image{
-    -fx-text-fill: red;
-}
+
 
 #supprimerBTN{
     -fx-background-color: red;
@@ -132,4 +130,7 @@
     -fx-background-color: transparent, #009EF, transparent, white;
     -fx-background-radius: 0, 0, 0, 0;
     -fx-padding: 0.166667em;
+}
+#err_nom,#err_des,#err_auteur,#err_qte,#err_image{
+    -fx-text-fill: red;
 }

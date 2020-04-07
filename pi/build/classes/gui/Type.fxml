@@ -6,42 +6,48 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorpane_parent" fx:id="anchorpane_parent" prefHeight="449.0" prefWidth="690.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TypeController">
+<AnchorPane id="anchorpane_parent" fx:id="anchorpane_parent" prefHeight="371.0" prefWidth="609.0" style="-fx-background-color: transparant;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TypeController">
     <stylesheets>
         <URL value="@type.css" />
     </stylesheets>
    <children>
-      <Pane id="pane_top" fx:id="pane_top" prefHeight="46.0" prefWidth="690.0">
+      <AnchorPane id="anchorpane_left" fx:id="anchorpane_left" layoutX="42.0" layoutY="61.0" prefHeight="294.0" prefWidth="216.0">
          <children>
-            <Label id="label_title" layoutX="23.0" layoutY="1.0" prefHeight="31.0" prefWidth="253.0" text="Type ">
-               <font>
-                  <Font name="System Italic" size="30.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <AnchorPane id="anchorpane_center" fx:id="anchorpane_center" layoutX="8.0" layoutY="57.0" prefHeight="378.0" prefWidth="660.0">
-         <children>
-            <AnchorPane id="anchorpane_left" fx:id="anchorpane_left" layoutX="14.0" layoutY="11.0" prefHeight="356.0" prefWidth="216.0">
-               <children>
-                  <JFXTextField id="txt_libelle" fx:id="txt_libelle" labelFloat="true" layoutX="15.0" layoutY="37.0" prefHeight="29.0" prefWidth="187.0" promptText="Libelle" />
-                  <JFXButton id="btn_ajouter" fx:id="btn_ajouter" buttonType="RAISED" layoutX="139.0" layoutY="113.0" onAction="#AjouterType" text="Ajouter" />
-                  <JFXButton id="btn_refres" fx:id="btn_refresh" layoutX="69.0" layoutY="113.0" text="Refresh" />
-               </children></AnchorPane>
-            <AnchorPane id="anchorpane_right" fx:id="anchorpane_right" layoutX="238.0" layoutY="11.0" prefHeight="356.0" prefWidth="411.0">
-               <children>
-                  <TableView fx:id="tabview" layoutX="17.0" layoutY="42.0" prefHeight="200.0" prefWidth="377.0">
-                    <columns>
-                      <TableColumn id="column_id" fx:id="column_id" minWidth="1.0" prefWidth="246.0" text="ID" />
-                      <TableColumn fx:id="column_libelle" onEditCommit="#ModifierType" prefWidth="130.0" text="Libelle" />
-                    </columns>
-                  </TableView>
-               </children></AnchorPane>
+            <JFXTextField id="txt_libelle" fx:id="txt_libelle" labelFloat="true" layoutX="34.0" layoutY="37.0" prefHeight="29.0" prefWidth="168.0" promptText="Libelle" style="-fx-background-color: linear-gradient(to top, #4790ff, #67a2ff, #84b3ff, #9fc4ff, #bad5ff);" />
+            <JFXButton id="btn_ajouter" fx:id="btn_ajouter" buttonType="RAISED" layoutX="139.0" layoutY="113.0" onAction="#AjouterType" text="Ajouter" />
+            <ImageView fitHeight="44.0" fitWidth="56.0" layoutX="42.0" layoutY="103.0" onMouseClicked="#clear" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/clear.png" />
+               </image>
+            </ImageView>
+            <Circle fill="DODGERBLUE" layoutX="-9.0" layoutY="54.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: linear-gradient(to top, #1e6ce1, #2e72db, #3c78d5, #497dcf, #5582c8); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+            <ImageView fx:id="exit" fitHeight="37.0" fitWidth="56.0" layoutX="-40.0" layoutY="38.0" onMousePressed="#exitApplication" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/ext.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
+      <AnchorPane id="anchorpane_right" fx:id="anchorpane_right" layoutX="278.0" layoutY="61.0" prefHeight="294.0" prefWidth="316.0">
+         <children>
+            <TableView fx:id="tabview" layoutX="19.0" layoutY="26.0" prefHeight="254.0" prefWidth="284.0">
+              <columns>
+                <TableColumn id="column_id" fx:id="column_id" minWidth="1.0" prefWidth="98.0" text="ID" />
+                <TableColumn fx:id="column_libelle" onEditCommit="#ModifierType" prefWidth="185.0" text="Libelle" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="label_title" layoutX="23.0" layoutY="8.0" prefHeight="43.0" prefWidth="216.0" text="Type">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

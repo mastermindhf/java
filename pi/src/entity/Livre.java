@@ -18,10 +18,45 @@ public class Livre {
     String auteur;
     int quantite;
     String image;
-    Type id_type;
+    Type id_type; 
+    int nbPersonnes;
 
     public Livre() {
     }
+
+    public Livre(int id, String nom, String description, String auteur, int quantite, String image, Type id_type, int nbPersonnes) {
+        this.id = id;
+        this.nom = nom;
+        this.description = description;
+        this.auteur = auteur;
+        this.quantite = quantite;
+        this.image = image;
+        this.id_type = id_type;
+        this.nbPersonnes = nbPersonnes;
+    }
+
+    public Livre(String nom, String description, String auteur, int quantite, String image, Type id_type, int nbPersonnes) {
+        this.nom = nom;
+        this.description = description;
+        this.auteur = auteur;
+        this.quantite = quantite;
+        this.image = image;
+        this.id_type = id_type;
+        this.nbPersonnes = nbPersonnes;
+    }
+
+    
+    
+
+    public Livre(int id, String nom, String description, String auteur, int quantite, String image) {
+        this.id = id;
+        this.nom = nom;
+        this.description = description;
+        this.auteur = auteur;
+        this.quantite = quantite;
+        this.image = image;
+    }
+    
 
     public Livre(int id, String nom, String description, String auteur, int quantite, String image, Type id_type) {
         this.id = id;
@@ -108,10 +143,23 @@ public class Livre {
         this.id_type = id_type;
     }
 
+    public int getNbPersonnes() {
+        return nbPersonnes;
+    }
+
+    public void setNbPersonnes(int nbPersonnes) {
+        this.nbPersonnes = nbPersonnes;
+    }
+
     @Override
     public String toString() {
-        return "Livre{" + "id=" + id + ", nom=" + nom + ", description=" + description + ", auteur=" + auteur + ", quantite=" + quantite + ", image=" + image + ", id_type=" + id_type + '}';
+        return "Livre{" + "id=" + id + ", nom=" + nom + ", description=" + description + ", auteur=" + auteur + ", quantite=" + quantite + ", image=" + image + ", id_type=" + id_type + ", nbPersonnes=" + nbPersonnes + '}';
     }
+    
+    
+
+    
+
 
     
     @Override

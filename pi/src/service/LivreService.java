@@ -8,7 +8,6 @@ package service;
 import DB.DataSource;
 import entity.Livre;
 import entity.Type;
-import gui.LivreController;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -32,12 +31,12 @@ import javafx.scene.control.TextField;
  */
 public class LivreService {
     Connection cn = DataSource.getInstance().getCnx();
-    private final static String UPLOAD_PATH = "C:/Images";
+    //private final static String UPLOAD_PATH = "C:\\3A13\\Java\\pi\\src\\ressources\\";
 
     private String getExtension(File f) {
         return f.getName().substring(f.getName().lastIndexOf(".") + 1);
     }
-    
+    /*
     private String uploadFile(File f) {
         String fileExtension = getExtension(f);
         Date now = Calendar.getInstance().getTime();
@@ -62,15 +61,9 @@ public class LivreService {
             return "";
         }
     }
+      */  
+    public boolean AjouterLivre(Livre l){
         
-    public boolean AjouterLivre(Livre l,File f){
-        String fileName = uploadFile(f);
-        if (fileName == "") {
-            System.out.println("Error uploading file");
-            return true;
-        }
-
-        l.setImage(fileName);
         
         String query = "insert into livres (id_type,nom,description,auteur,quantite,image) values('" + l.getId_type().getIdL()+ "','" +l.getNom()+ "','" +l.getDescription()+ "','" +l.getAuteur()+ "','" +l.getQuantite()+ "','" +l.getImage()+ "')";
         System.out.println(query);
@@ -86,63 +79,49 @@ public class LivreService {
 return x;
     }
     
-   /* 
-    public ArrayList<Livre> AfficherLivre(){
-         ArrayList<Livre> livres= new ArrayList<>();
-        String requete = "(select idLivre,id_type,nom,description,auteur,quantite,image from livres)";
+  
+    public ArrayList<Livre> AfficherLivre() {
+        ArrayList<Livre> livres = new ArrayList<>();
+        String requete = "(select * from livres)";
         try {
-            
             Statement st = cn.createStatement();
             ResultSet x = st.executeQuery(requete);
             while (x.next()) {
                 livres.add(recupereResultat(x));
             }
         } catch (SQLException ex) {
-            System.out.println("ok");
+            System.out.println("Errrrrrrrrrrrrrr");
         }
         return livres;
     }
-    */
-    public ArrayList<Livre> AfficherLivre() {
-        ArrayList<Livre> cours = new ArrayList<>();
-        String requete = "(select * from livres)";
-        try {
-            Statement st = cn.createStatement();
-            ResultSet x = st.executeQuery(requete);
-            while (x.next()) {
-                cours.add(recupereResultat(x));
-            }
-        } catch (SQLException ex) {
-            System.out.println("ok");
-        }
-        return cours;
-    }
+    
+    
     public Livre recupereResultat(ResultSet x) {
         Livre l = new Livre();
-        try {
-           
+        try {          
                 l.setId(x.getInt("idLivre"));
                 l.setNom(x.getString("nom"));
                 l.setDescription(x.getString("description"));
                 l.setAuteur(x.getString("auteur"));
                 l.setId_type(retournerType(x.getInt("id_type")));
                 l.setQuantite(x.getInt("quantite"));
-                l.setImage(x.getString("image"));
-               
-            
+                l.setNbPersonnes(x.getInt("nbPersonnes"));
+                l.setImage("file:C:\\3A13\\ressources\\"+x.getString("image"));       
         } catch (SQLException ex) {
 
         }
 
         return l;
     }
+    
+    
     public Type retournerType(int id) {
         try {
             PreparedStatement pt = cn.prepareStatement("select * from type where idL=?");
             pt.setInt(1, id);
-            ResultSet rs = pt.executeQuery();
-            while (rs.next()) {
-                return recupereResultatM(rs);
+            ResultSet ty = pt.executeQuery();
+            while (ty.next()) {
+                return recupereType(ty);
             }
         } catch (SQLException ex) {
 
@@ -150,7 +129,8 @@ return x;
         return null;
     }
     
-    public Type recupereResultatM(ResultSet x) {
+    
+    public Type recupereType(ResultSet x) {
         Type q = new Type();
         try {
             q.setIdL(x.getInt("idL"));
@@ -163,40 +143,18 @@ return x;
         return q;
     }
     
-    
             
-    /*
-    public void update(int id,String nom,String description,String auteur , String image) {
-        
-        try {
-          System.out.println("testttt");
-          String req = "UPDATE livres SET nom=?,description=?,auteur=?,image=? WHERE idLivre=?";
-            System.out.println(req);
-             PreparedStatement pt = cn.prepareStatement(req);
-             System.out.println("modiffff");
-             pt.setString(1,nom);
-             pt.setString(2,description);
-               pt.setString(3, auteur);
-             //pt.setInt(4,type);
-             //pt.setInt(5,quantite);
-             pt.setString(4,image);
-               pt.setInt(5,id);
-                 pt.executeUpdate();
-         } catch (SQLException ex) {
-             Logger.getLogger(LivreService.class.getName()).log(Level.SEVERE, null, ex);
-         }
-
-    }
-    */
     public void update(Livre l) {
 
         String requete = "UPDATE `livres` SET `nom` = '" + l.getNom() + "', `description` = '" + l.getDescription() + "', `auteur` = '" + l.getAuteur() + "', `id_type` = '" + l.getId_type().getIdL() + "', `quantite` = '" + l.getQuantite()+ "', `image` = '" + l.getImage() + "' WHERE `livres`.`idLivre` = '" + l.getId() + "'";
         try {
             Statement st = cn.createStatement();
             st.executeUpdate(requete);
+            AfficherLivre();         
         } catch (SQLException e) {
         }
     }
+    
     public void delete(int id) {
       try {
           PreparedStatement pt = cn.prepareStatement("delete from livres where idLivre =?");
@@ -248,5 +206,21 @@ return x;
     return b;        
     }
 
+    public long recuperer_livre(Livre l) {
+        ArrayList<Livre> livres = new ArrayList<Livre>();
+        livres = this.AfficherLivre();
+        long id = -1;
+        for (int i = 0; i < livres.size(); i++) {
+            if ((livres.get(i).getId()==l.getId())&&(livres.get(i).getDescription().equals(l.getDescription())) && (livres.get(i).getNom().equals(l.getNom()))) {
+                //System.out.println("exist");
+                id = livres.get(i).getId();
+                break;
+            }
+
+        }
+        return id;
+    }
+    
+    
 
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparant;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ReservationEleveController">
+   <children>
+      <TableView id="tabLivre" fx:id="tabLivre" layoutX="46.0" layoutY="69.0" prefHeight="311.0" prefWidth="436.0">
+         <columns>
+            <TableColumn id="column_idL" fx:id="column_idL" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn id="column_nomL" fx:id="column_nomL" prefWidth="78.0" text="Nom" />
+            <TableColumn id="column_descriptionL" fx:id="column_descriptionL" prefWidth="96.0" text="Description" />
+            <TableColumn id="column_auteurL" fx:id="column_auteurL" prefWidth="69.0" text="Auteur" />
+            <TableColumn id="column_quantiteL" fx:id="column_quantiteL" prefWidth="85.0" text="Quantite" />
+            <TableColumn id="column_type" fx:id="column_type" minWidth="0.0" prefWidth="107.0" text="Type" />
+            <TableColumn id="column_imageL" fx:id="column_imageL" minWidth="0.0" prefWidth="0.0" text="Image" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

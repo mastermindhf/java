@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="470.0" prefWidth="741.0" style="-fx-background-color: transparant;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficheBiblioFrontController">
+   <children>
+      <TableView id="tabLivre" fx:id="tabLivre" layoutX="68.0" layoutY="35.0" prefHeight="408.0" prefWidth="526.0">
+         <columns>
+            <TableColumn id="column_idL" fx:id="column_idL" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn id="column_nomL" fx:id="column_nomL" prefWidth="65.0" text="Nom" />
+            <TableColumn id="column_descriptionL" fx:id="column_descriptionL" prefWidth="83.0" text="Description" />
+            <TableColumn id="column_auteurL" fx:id="column_auteurL" prefWidth="51.0" text="Auteur" />
+            <TableColumn id="column_quantiteL" fx:id="column_quantiteL" prefWidth="58.0" text="Quantite" />
+            <TableColumn id="column_quantiteL" fx:id="column_nb" prefWidth="64.0" text="nb Empreinte" />
+            <TableColumn id="column_type" fx:id="column_type" minWidth="0.0" prefWidth="95.0" text="Type" />
+            <TableColumn id="column_imageL" fx:id="column_imageL" prefWidth="109.0" text="Image" />
+         </columns>
+      </TableView>
+      <Button fx:id="empreinter" layoutX="618.0" layoutY="88.0" mnemonicParsing="false" onAction="#empreinter" prefHeight="25.0" prefWidth="96.0" text="Empreinter" />
+      <Button fx:id="rendre" layoutX="619.0" layoutY="128.0" mnemonicParsing="false" onAction="#rendre" prefHeight="25.0" prefWidth="96.0" text="Rendre" />
+      <Button fx:id="mesEmpreinte" layoutX="619.0" layoutY="35.0" mnemonicParsing="false" onAction="#mesEmpreinte" prefHeight="25.0" prefWidth="96.0" text="Mes Empreintes" />
+      <ImageView fx:id="exit" fitHeight="52.0" fitWidth="57.0" layoutX="5.0" layoutY="408.0" onMousePressed="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/retour.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="exit1" fitHeight="37.0" fitWidth="56.0" layoutX="647.0" layoutY="418.0" onMousePressed="#exitApplication" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/ext.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
