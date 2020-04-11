@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="no" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReponseReclamationController">
+   <children>
+      <TableView fx:id="tabRep" layoutX="30.0" layoutY="53.0" prefHeight="456.0" prefWidth="1314.0" stylesheets="@tableview.css">
+        <columns>
+          <TableColumn fx:id="nomRc" prefWidth="100.79999351501465" text="Nom" />
+          <TableColumn fx:id="prenomRc" minWidth="0.0" prefWidth="61.600006103515625" text="Prenom" />
+            <TableColumn fx:id="TelRc" minWidth="5.600006103515625" prefWidth="112.80006408691406" text="Telephone" />
+            <TableColumn fx:id="EmailTest" prefWidth="143.99993896484375" text="Email" />
+            <TableColumn fx:id="typeRc" prefWidth="57.60003662109375" text="Type" />
+            <TableColumn fx:id="objetRc" prefWidth="80.79998779296875" text="Objet" />
+            <TableColumn fx:id="screenshotRc" prefWidth="154.4000244140625" text="ScreenShot" />
+            <TableColumn fx:id="RecRc" prefWidth="309.60003662109375" text="Réclamation" />
+            <TableColumn fx:id="EtatRc" prefWidth="79.99993896484375" text="Etat" />
+            <TableColumn fx:id="DateD" prefWidth="214.4000244140625" text="Date De Disponibilité" />
+        </columns>
+      </TableView>
+      <Button fx:id="repondre" layoutX="730.0" layoutY="848.0" mnemonicParsing="false" onAction="#repondre" stylesheets="@input.css" text="Repondre" />
+      <TextField fx:id="nomrep" layoutX="219.0" layoutY="565.0" prefHeight="28.0" prefWidth="149.0" />
+      <Text fx:id="nomText" layoutX="107.0" layoutY="589.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Text>
+      <TextField fx:id="PrenomRep" layoutX="220.0" layoutY="621.0" />
+      <Text fx:id="prenomT" layoutX="108.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></Text>
+      <TextField fx:id="TelRep" layoutX="220.0" layoutY="679.0" />
+      <Text fx:id="TelT" layoutX="107.0" layoutY="702.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Text>
+      <TextField fx:id="EmailREp" layoutX="220.0" layoutY="742.0" />
+      <Text fx:id="EmailT" layoutX="102.0" layoutY="763.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></Text>
+      <TextField fx:id="TypeRep" layoutX="220.0" layoutY="798.0" />
+      <TextField fx:id="ObejtRep" layoutX="219.0" layoutY="856.0" />
+      <TextField fx:id="DateRep" layoutX="220.0" layoutY="905.0" />
+      <Text fx:id="TypeT" layoutX="106.0" layoutY="819.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></Text>
+      <Text fx:id="ObjetT" layoutX="104.0" layoutY="878.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Objet">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></Text>
+      <Text fx:id="DateT" layoutX="107.0" layoutY="926.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></Text>
+      <Text fx:id="RecT" layoutX="478.0" layoutY="565.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reclamation" wrappingWidth="169.45721435546875">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font></Text>
+      <TextArea fx:id="ReclamationT" layoutX="455.0" layoutY="579.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="repondreReclamation" layoutX="687.0" layoutY="571.0" prefHeight="200.0" prefWidth="200.0" />
+      <ImageView fx:id="nomimage" fitHeight="42.0" fitWidth="54.0" layoutX="45.0" layoutY="558.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="prenomImage" fitHeight="42.0" fitWidth="54.0" layoutX="45.0" layoutY="613.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="teleimage" fitHeight="42.0" fitWidth="54.0" layoutX="45.0" layoutY="671.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="emailimage" fitHeight="42.0" fitWidth="54.0" layoutX="45.0" layoutY="733.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

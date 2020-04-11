@@ -1,0 +1,14 @@
+.root{
+ 
+  
+  -fx-text-fill: -text-light;
+  -fx-prompt-text-fill: rgba(0,0,0,.3);
+
+  -text-disabled: -text-disabled-light;
+  -background-disabled:rgba(0,0,0,.12);
+  -background-fill: -text-light;
+
+  -flat-button-hover-background: rgba(#FF6F91,.2);
+  -flat-button-pressed-background: rgba(#FF6F91,.4);
+  -flat-button-disabled-fill: rgba(#FF6F91,.26);
+}
