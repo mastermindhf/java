@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.StatController">
+   <children>
+      <PieChart fx:id="pieChart" layoutX="63.0" layoutY="18.0" prefHeight="368.0" prefWidth="496.0" title="Stat" />
+      <Circle fill="DODGERBLUE" layoutX="56.0" layoutY="386.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+      <ImageView fx:id="exit" fitHeight="52.0" fitWidth="57.0" layoutX="30.0" layoutY="360.0" onMousePressed="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/retour.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

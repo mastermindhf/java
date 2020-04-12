@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="611.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AfficheResController">
+   <children>
+      <TableView id="tabLivre" fx:id="tabLivre" layoutX="58.0" layoutY="23.0" prefHeight="408.0" prefWidth="526.0" stylesheets="@type.css">
+         <columns>
+            <TableColumn id="column_idL" fx:id="column_idL" minWidth="0.0" prefWidth="0.0" text="ID" />
+            <TableColumn id="column_nomL" fx:id="column_nomL" prefWidth="65.0" text="Nom" />
+            <TableColumn id="column_descriptionL" fx:id="column_descriptionL" prefWidth="83.0" text="Description" />
+            <TableColumn id="column_auteurL" fx:id="column_auteurL" prefWidth="51.0" text="Auteur" />
+            <TableColumn id="column_quantiteL" fx:id="column_quantiteL" prefWidth="58.0" text="Quantite" />
+            <TableColumn id="column_quantiteL" fx:id="column_nb" prefWidth="64.0" text="nb Empreinte" />
+            <TableColumn id="column_type" fx:id="column_type" minWidth="0.0" prefWidth="95.0" text="Type" />
+            <TableColumn id="column_imageL" fx:id="column_imageL" prefWidth="109.0" text="Image" />
+         </columns>
+      </TableView>
+      <Circle fill="DODGERBLUE" layoutX="43.0" layoutY="403.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+      <ImageView fx:id="exit1" fitHeight="52.0" fitWidth="57.0" layoutX="17.0" layoutY="377.0" onMousePressed="#retour" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/retour.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

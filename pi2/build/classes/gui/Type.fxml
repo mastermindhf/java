@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchorpane_parent" fx:id="anchorpane_parent" prefHeight="371.0" prefWidth="609.0" style="-fx-background-color: transparant;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.TypeController">
+    <stylesheets>
+        <URL value="@type.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="anchorpane_left" fx:id="anchorpane_left" layoutX="42.0" layoutY="61.0" prefHeight="294.0" prefWidth="216.0" style="-fx-background-color: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-background-radius: 12; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);">
+         <children>
+            <JFXTextField id="txt_libelle" fx:id="txt_libelle" labelFloat="true" layoutX="34.0" layoutY="37.0" prefHeight="29.0" prefWidth="168.0" promptText="Libelle" />
+            <JFXButton id="btn_ajouter" fx:id="btn_ajouter" buttonType="RAISED" layoutX="139.0" layoutY="113.0" onAction="#AjouterType" style="-fx-background-color: green;" text="Ajouter" />
+            <ImageView fitHeight="44.0" fitWidth="56.0" layoutX="42.0" layoutY="103.0" onMouseClicked="#clear" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/clear.png" />
+               </image>
+            </ImageView>
+            <Circle fill="DODGERBLUE" layoutX="-9.0" layoutY="54.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+            <ImageView fx:id="exit" fitHeight="37.0" fitWidth="56.0" layoutX="-40.0" layoutY="38.0" onMousePressed="#exitApplication" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/ext.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="anchorpane_right" fx:id="anchorpane_right" layoutX="278.0" layoutY="61.0" prefHeight="294.0" prefWidth="316.0">
+         <children>
+            <TableView fx:id="tabview" layoutX="19.0" layoutY="26.0" prefHeight="254.0" prefWidth="284.0">
+              <columns>
+                <TableColumn id="column_id" fx:id="column_id" minWidth="1.0" prefWidth="98.0" text="ID" />
+                <TableColumn fx:id="column_libelle" onEditCommit="#ModifierType" prefWidth="185.0" text="Libelle" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label fx:id="label_title" layoutX="23.0" layoutY="8.0" prefHeight="43.0" prefWidth="216.0" text="Type">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
