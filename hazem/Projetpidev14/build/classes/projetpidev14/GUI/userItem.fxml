@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="339.0" prefWidth="940.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetpidev14.GUI.UserItemController">
+   <children>
+      <Pane layoutX="9.0" layoutY="25.0" prefHeight="106.0" prefWidth="920.0" style="-fx-background-color: #0188CC;" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Pane style="-fx-background-color: #fff;">
+               <children>
+                  <ImageView fx:id="imageuser" fitHeight="106.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <Label fx:id="dateajout" layoutX="157.0" layoutY="24.0" text="Date d'ajout" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btninfo" layoutX="714.0" layoutY="23.0" mnemonicParsing="false" onAction="#displayprofile" prefHeight="43.0" prefWidth="161.0" text="Plus de detail" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Label layoutX="31.0" layoutY="159.0" text="Nom">
+         <font>
+            <Font name="Microsoft JhengHei" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="228.0" text="Prenom">
+         <font>
+            <Font name="Microsoft JhengHei" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="391.0" layoutY="166.0" text="Etat">
+         <font>
+            <Font name="Microsoft JhengHei" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="391.0" layoutY="228.0" text="Etat compte">
+         <font>
+            <Font name="Microsoft JhengHei" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="6.0" layoutY="146.0" prefHeight="0.0" prefWidth="933.0" />
+      <Label fx:id="nomuser" layoutX="31.0" layoutY="187.0" text="Label" />
+      <Label fx:id="prenomuser" layoutX="31.0" layoutY="259.0" text="Label" />
+      <Label fx:id="etatuser" layoutX="391.0" layoutY="196.0" text="Label" />
+      <Label fx:id="etatcomte" layoutX="391.0" layoutY="259.0" text="Label" />
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+   <padding>
+      <Insets bottom="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

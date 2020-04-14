@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="600.0" prefWidth="1237.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetpidev14.GUI.LoginuserController">
+   <children>
+      <Pane layoutX="441.0" layoutY="56.0" prefHeight="444.0" prefWidth="355.0" AnchorPane.bottomAnchor="56.0" AnchorPane.topAnchor="56.0">
+         <children>
+            <TextField fx:id="emailfield" layoutX="103.0" layoutY="124.0" />
+            <Label layoutX="163.0" layoutY="42.0" text="Login" />
+            <Label layoutX="102.0" layoutY="107.0" text="Email" />
+            <Label layoutX="102.0" layoutY="184.0" text="password" />
+            <Button fx:id="btnlogin" accessibleText="btnlogin" layoutX="150.0" layoutY="244.0" mnemonicParsing="false" onAction="#loginUser" text="login" />
+            <Button fx:id="btnsignin" accessibleText="btnsignin" layoutX="84.0" layoutY="296.0" mnemonicParsing="false" onAction="#siginUser" text="don't have an account, sign in" />
+            <PasswordField fx:id="passwordfield" layoutX="101.0" layoutY="210.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="600.0" prefWidth="1237.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetpidev14.GUI.AdminhomeController">
+   <children>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0188CC;" AnchorPane.bottomAnchor="471.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="currentuser" layoutX="67.0" layoutY="23.0" text="Admin panel" textFill="#fcfcfc">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="290.0" layoutY="37.0" text="nombre d'eleves" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="510.0" layoutY="36.0" text="nombre d'enseignants" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="760.0" layoutY="36.0" text="nombre des parents" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="1020.0" layoutY="36.0" text="nombre des admins" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="nbreleve" layoutX="336.0" layoutY="72.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="nbrenseignant" layoutX="586.0" layoutY="72.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="nbrparent" layoutX="826.0" layoutY="72.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="nbradmin" layoutX="1086.0" layoutY="72.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox layoutX="1.0" layoutY="133.0" prefHeight="470.0" prefWidth="283.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="1.0">
+         <children>
+            <Button fx:id="allusers" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#displayUsers" prefHeight="44.0" prefWidth="237.0" text="Users">
+               <VBox.margin>
+                  <Insets top="65.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="75.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Button">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Button">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="166.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="254.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="298.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="342.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="237.0" text="Button">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button fx:id="logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="386.0" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="237.0" text="Logout">
+               <VBox.margin>
+                  <Insets top="3.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutX="56.0" layoutY="65.0" style="-fx-background-color: #afafaf;" />
+      <ScrollPane layoutX="236.0" layoutY="178.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="236.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="178.0">
+         <content>
+            <VBox fx:id="itemviewer" prefHeight="425.0" prefWidth="1001.0" style="-fx-background-color: #ababab;">
+               <opaqueInsets>
+                  <Insets bottom="10.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </VBox>
+         </content>
+         <padding>
+            <Insets bottom="15.0" />
+         </padding>
+      </ScrollPane>
+      <HBox layoutX="187.0" layoutY="133.0" prefHeight="44.0" prefWidth="1050.0" AnchorPane.bottomAnchor="426.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="133.0">
+         <children>
+            <Button fx:id="treerole" mnemonicParsing="false" onAction="#displayUsersParRole" prefHeight="44.0" prefWidth="333.0" text="trie par role" visible="false" />
+            <Button fx:id="treeetat" mnemonicParsing="false" onAction="#displayUsersparEtatCompte" prefHeight="44.0" prefWidth="333.0" text="trie par etat du compte" visible="false" />
+            <TextField fx:id="recherche" prefHeight="44.0" prefWidth="1346.0" text="recherche...." />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
