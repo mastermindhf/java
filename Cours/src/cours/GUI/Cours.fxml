@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="back" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cours.GUI.CoursController">
+    <children>
+      <Group fx:id="iconQuestion" layoutX="213.0" layoutY="37.0">
+         <children>
+            <Circle fx:id="questionCircle" fill="DODGERBLUE" layoutX="9.0" layoutY="6.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+            <ImageView fx:id="questionIcon" fitHeight="56.0" fitWidth="43.0" layoutX="-12.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);">
+               <image>
+                  <Image url="@../Image/questions.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <AnchorPane fx:id="anchorReponse" prefHeight="348.0" prefWidth="469.0" style="-fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <TableView fx:id="tableReponse" editable="true" layoutX="-26.0" prefHeight="427.0" prefWidth="495.0" stylesheets="@tableview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="COURS" minWidth="0.0" prefWidth="123.75" text="COURS" />
+                  <TableColumn fx:id="QUESTION" prefWidth="123.75" resizable="false" text="QUESTION" />
+                  <TableColumn fx:id="REPONSE" minWidth="0.0" onEditCommit="#ModifierCours" prefWidth="123.75" text="Reponse" />
+                  <TableColumn fx:id="ETAT" minWidth="0.0" prefWidth="123.75" text="ETAT" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="crudReponse" layoutX="87.0" layoutY="50.0" prefHeight="348.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-background-radius: 12; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Button fx:id="BAjouterReponse" layoutX="68.0" layoutY="376.0" mnemonicParsing="false" onAction="#AjouterReponse" style="-fx-background-color: white; -fx-background-radius: 2em; -fx-text-fill: #333333; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" text="Ajouter" />
+            <Label graphicTextGap="6.0" layoutX="13.0" layoutY="66.0" lineSpacing="1.0" text="Gestion  des  Reponses" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Bebas" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="97.0" text="Cour :" textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="id_CR" layoutX="17.0" layoutY="122.0" prefWidth="150.0" promptText="Inserer un cours " />
+            <Label layoutX="19.0" layoutY="165.0" text="Question : " textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="BModifierReponse" layoutX="58.0" layoutY="376.0" mnemonicParsing="false" onAction="#ModifierReponse" style="-fx-background-color: white; -fx-background-radius: 2em; -fx-text-fill: #333333; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" text="Mise à jour" />
+            <ComboBox fx:id="id_QR" layoutX="19.0" layoutY="195.0" prefWidth="150.0" promptText="Inserer la question" />
+            <Label layoutX="19.0" layoutY="236.0" text="Reponse : " textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="repR" layoutX="21.0" layoutY="263.0" />
+            <ComboBox fx:id="etatrep" layoutX="22.0" layoutY="326.0" prefWidth="150.0" promptText="Vrai/Faux" />
+            <Label layoutX="21.0" layoutY="300.0" text="Etat : " textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="crudQuestion" layoutX="85.0" layoutY="52.0" prefHeight="348.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-background-radius: 12; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Button fx:id="BAjouterQuestion" layoutX="68.0" layoutY="306.0" mnemonicParsing="false" onAction="#AjouterQuestion" style="-fx-background-color: white; -fx-background-radius: 2em; -fx-text-fill: #333333; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" text="Ajouter" />
+            <Label graphicTextGap="6.0" layoutX="13.0" layoutY="66.0" lineSpacing="1.0" text="Gestion  des questions" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Bebas" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="17.0" layoutY="97.0" text="Cour :" textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+            <ComboBox fx:id="id_C" layoutX="17.0" layoutY="122.0" prefWidth="150.0" promptText="Inserer un cours " />
+            <Label layoutX="19.0" layoutY="165.0" text="Question" textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+            <Button fx:id="BModifierQuestion" layoutX="58.0" layoutY="306.0" mnemonicParsing="false" onAction="#ModifierQuestion" style="-fx-background-color: white; -fx-background-radius: 2em; -fx-text-fill: #333333; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" text="Mise à jour" />
+            <TextField fx:id="question" layoutX="19.0" layoutY="193.0" />
+            <DatePicker fx:id="date" layoutX="15.0" layoutY="259.0" showWeekNumbers="true" />
+            <Label layoutX="19.0" layoutY="234.0" text="Date de mise en place" textFill="#fcfcfc">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane id="AnchorPane" fx:id="anchorQuestion" layoutX="486.0" layoutY="52.0" prefHeight="348.0" prefWidth="469.0" style="-fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <TableView fx:id="tableQuestion" editable="true" onMousePressed="#SupprimerQuestion" prefHeight="348.0" prefWidth="469.0" stylesheets="@tableview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="COURSQ" prefWidth="165.0" text="COURS" />
+                  <TableColumn fx:id="DATE" prefWidth="165.0" text="DATE" />
+                  <TableColumn fx:id="QUESTIONQ" prefWidth="165.0" resizable="false" text="QUESTIONS" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Group fx:id="iconCours" layoutX="120.0" layoutY="36.0">
+         <children>
+            <Circle fx:id="coursCircle" fill="DODGERBLUE" layoutX="9.0" layoutY="6.0" radius="28.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+            <ImageView fx:id="coursIcon" fitHeight="37.0" fitWidth="37.0" layoutX="-9.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);">
+               <image>
+                  <Image url="@../Image/cours.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <Group fx:id="iconReponse" layoutX="82.0" layoutY="106.0">
+         <children>
+            <Circle fill="DODGERBLUE" layoutX="-6.0" layoutY="-5.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+            <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="-23.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);">
+               <image>
+                  <Image url="@../Image/icons8_true_false_30px.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <rotationAxis>
+                  <Point3D x="1.0" y="90.0" />
+               </rotationAxis>
+            </ImageView>
+         </children>
+      </Group>
+      <AnchorPane fx:id="crudCours" layoutX="86.0" layoutY="52.0" prefHeight="348.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-background-radius: 12; -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <TextField fx:id="niv" layoutX="28.0" layoutY="241.0" />
+            <Label fx:id="LabelNiveau" layoutX="29.0" layoutY="213.0" prefHeight="29.0" prefWidth="149.0" text="Niveau :" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="mat" layoutX="25.0" layoutY="151.0" prefWidth="150.0" promptText="Choisir Matière" />
+            <Label graphicTextGap="6.0" layoutX="24.0" layoutY="66.0" lineSpacing="1.0" text="Gestions des cours ." textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Bebas" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgniv" fitHeight="29.0" fitWidth="32.0" layoutX="155.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/icons8_sleeping_64px_4.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="LabelNiveau1" layoutX="26.0" layoutY="279.0" prefHeight="29.0" prefWidth="149.0" text="Support : " textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="FilePath" layoutX="29.0" layoutY="317.0" />
+            <ImageView fx:id="Importer" fitHeight="25.0" fitWidth="75.0" layoutX="155.0" layoutY="283.0" onMouseReleased="#File" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/icons8_download_26px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn" fitHeight="43.0" fitWidth="56.0" layoutX="79.0" layoutY="358.0" onMouseReleased="#AjouterCours" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/icons8_checkmark_26px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="BModifierCours" fitHeight="43.0" fitWidth="100.0" layoutX="79.0" layoutY="358.0" onMouseReleased="#ModifierCours" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/icons8_checkmark_26px_4.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorCours" layoutX="486.0" layoutY="52.0" prefHeight="348.0" prefWidth="469.0" style="-fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="486.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <TableView fx:id="table" editable="true" layoutX="-26.0" prefHeight="427.0" prefWidth="495.0" stylesheets="@tableview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="MATC" minWidth="0.0" prefWidth="165.0" resizable="false" text="MATIERE" />
+                  <TableColumn fx:id="LIBC" minWidth="-1.0" onEditCommit="#ModifierCours" prefWidth="165.0" resizable="false" text="LIBELLE" />
+                  <TableColumn fx:id="NIVC" minWidth="0.0" prefWidth="165.0" resizable="false" text="NIVEAU" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Group fx:id="exit" layoutX="76.0" layoutY="419.0">
+         <children>
+            <Circle fill="DODGERBLUE" layoutX="9.0" layoutY="6.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-fill: linear-gradient(to right top, #eb3349, #ee3f47, #f04946, #f25344, #f45c43); -fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);" />
+            <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="-8.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true" rotate="172.9" style="-fx-effect: dropshadow(two-pass-box, black,15,0.0,0.5,3);">
+               <image>
+                  <Image url="@../Image/exit.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               <rotationAxis>
+                  <Point3D x="1.0" y="90.0" />
+               </rotationAxis>
+            </ImageView>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
